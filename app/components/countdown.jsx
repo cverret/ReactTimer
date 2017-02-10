@@ -25,6 +25,9 @@ var Countdown = React.createClass ({
       }
     }
   },
+  componentWillUnmount: function (){
+    console.log('component did unmount');
+  },
   startTimer: function () {
     this.timer = setInterval(() => {
       var newCount = this.state.count - 1;
@@ -53,6 +56,7 @@ var Countdown = React.createClass ({
     };
     return (
       <div>
+      <h1 className="page-title">Countdown App</h1>
         <Clock totalSeconds={count} />
         {renderControlArea()}
       </div>
